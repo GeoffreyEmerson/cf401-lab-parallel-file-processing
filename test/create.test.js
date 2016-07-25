@@ -5,9 +5,9 @@ const read = require('../lib/read').read;
 const fs = require('fs');
 
 const testData = {
-    name: 'Pidgey',
-    type: 'flying'
-  };
+  name: 'Pidgey',
+  type: 'flying'
+};
 const testType = 'test_type';
 const testPath = 'storage/';
 
@@ -47,7 +47,7 @@ describe('Create and Read', function() {
     fs.readdir(Store.path, function(err,folders) {
       const filteredFolders = folders.filter(function(folder) {
         if (folder.includes('test_')) return true;
-      })
+      });
       filteredFolders.forEach(function(folder) {
         fs.readdir(Store.path + folder, function(err,files) {
           files.forEach(function(file) {
